@@ -1,0 +1,291 @@
+﻿Build1=karbordi,ir.safhebeshkan.apkkala
+File1=0.wav
+File10=b.mp3
+File11=back1.png
+File12=back1_hover.png
+File13=c1.jpg
+File14=c2.jpg
+File15=c3.jpg
+File16=c4.jpg
+File17=c5.jpg
+File18=c6.jpg
+File19=c7.jpg
+File2=1.bal
+File20=c8.jpg
+File21=email.png
+File22=error.wav
+File23=exit.PNG
+File24=frm1.bal
+File25=frmabout.bal
+File26=frmicon.bal
+File27=frmlisticon.bal
+File28=icon.png
+File29=line.PNG
+File3=1.wav
+File30=logo.png
+File31=msg.PNG
+File32=setting.png
+File33=setting_active.png
+File34=site1.png
+File35=sms.png
+File36=sound.png
+File37=SROYA.TTF
+File38=SROYABD.TTF
+File39=start.png
+File4=2.wav
+File40=stop.PNG
+File41=tab_header_bg.9.png
+File42=titr.PNG
+File5=3.wav
+File6=4.wav
+File7=5.wav
+File8=about.PNG
+File9=alert.PNG
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group
+FileGroup27=Default Group
+FileGroup28=Default Group
+FileGroup29=Default Group
+FileGroup3=Default Group
+FileGroup30=Default Group
+FileGroup31=Default Group
+FileGroup32=Default Group
+FileGroup33=Default Group
+FileGroup34=Default Group
+FileGroup35=Default Group
+FileGroup36=Default Group
+FileGroup37=Default Group
+FileGroup38=Default Group
+FileGroup39=Default Group
+FileGroup4=Default Group
+FileGroup40=Default Group
+FileGroup41=Default Group
+FileGroup42=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+IconFile=
+Library1=ahpreferenceactivity
+Library10=cheshmak
+Library11=pusheplugin_v1.3.4
+Library2=animation
+Library3=core
+Library4=reflection
+Library5=id
+Library6=phone
+Library7=studentlibrary
+Library8=json
+Library9=dialogs
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="22"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetActivityAttribute(actvis, android:theme, @android:style/Theme.Translucent.NoTitleBar)~\n~AddApplicationText(<activity android:label="Setting" android:name="anywheresoftware.b4a.objects.preferenceactivity"/>)~\n~~\n~~\n~~\n~~\n~AddManifestText( <permission android:name="${applicationId}.permission.C2D_MESSAGE" android:protectionLevel="signature" />)~\n~AddPermission(${applicationId}.permission.C2D_MESSAGE)~\n~AddPermission(android.permission.ACCESS_NETWORK_STATE)~\n~AddApplicationText(<meta-data~\n~ android:name="com.google.android.gms.version"~\n~ android:value="@integer/google_play_services_version" />~\n~ <service android:name="me.cheshmak.android.sdk.core.push.CheshmakPushRegistration"~\n~ android:exported="false" />~\n~ <service~\n~ android:name="me.cheshmak.android.sdk.core.push.CheshIDListenerService"~\n~ android:exported="false" >~\n~ <intent-filter>~\n~ <action android:name="com.google.android.gms.iid.InstanceID" />~\n~ </intent-filter>~\n~ </service>~\n~ <service android:name="me.cheshmak.android.sdk.core.push.CheshGcmListenerService" />~\n~~\n~ <receiver~\n~ android:name="com.google.android.gms.gcm.GcmReceiver"~\n~ android:exported="true"~\n~ android:permission="com.google.android.c2dm.permission.SEND" >~\n~ <intent-filter>~\n~ <action android:name="com.google.android.c2dm.intent.RECEIVE" />~\n~ <category android:name="me.cheshmak.android.sdk.core" />~\n~ </intent-filter>~\n~ </receiver>~\n~ <receiver android:name="me.cheshmak.android.sdk.core.recievers.AlarmReceiver" >~\n~ <intent-filter>~\n~ <action android:name="android.intent.action.TIME_SET" />~\n~ <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />~\n~ <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />~\n~ <action android:name="android.intent.action.DELETE" />~\n~ </intent-filter>~\n~ <intent-filter>~\n~ <action android:name="android.intent.action.BOOT_COMPLETED" />~\n~ <action android:name="android.intent.action.QUICKBOOT_POWERON" />~\n~ </intent-filter>~\n~ </receiver>~\n~ <receiver android:name="me.cheshmak.android.sdk.core.recievers.RemoteReceiver" >~\n~ <intent-filter>~\n~ <action android:name="CHESH_REMOTE_DATA_ACTION" />~\n~ </intent-filter>~\n~ </receiver>~\n~ <receiver android:name="me.cheshmak.android.sdk.core.recievers.LocationReceiver" />~\n~ <receiver~\n~ android:name="me.cheshmak.android.sdk.core.push.GcmBroadcastReceiver"~\n~ android:permission="com.google.android.c2dm.permission.SEND" >~\n~ <intent-filter>~\n~ <action android:name="com.google.android.c2dm.intent.RECEIVE" />~\n~ <category android:name="${applicationId}" />~\n~ </intent-filter>~\n~ </receiver>~\n~ <service~\n~ android:name="me.cheshmak.android.sdk.core.network.EventSendService"~\n~ android:enabled="true" >~\n~ </service>~\n~ <receiver android:name="me.cheshmak.android.sdk.core.push.MessageHandler" />~\n~ <receiver android:name="me.cheshmak.android.sdk.core.recievers.AppChangeListener" >~\n~ <intent-filter android:priority="10000" >~\n~ <action android:name="android.intent.action.PACKAGE_INSTALL" />~\n~ <action android:name="android.intent.action.PACKAGE_ADDED" />~\n~ <action android:name="android.intent.action.PACKAGE_REMOVED" />~\n~ <action android:name="android.intent.action.PACKAGE_REPLACED" />~\n~~\n~ <data android:scheme="package" />~\n~ </intent-filter>~\n~ </receiver>~\n~~\n~ <service~\n~ android:name="me.cheshmak.android.sdk.core.push.mqtt.CheshmakSocketService"~\n~ android:enabled="true" />~\n~~\n~ <receiver android:name="me.cheshmak.android.sdk.core.recievers.PowerConnectionReceiver" >~\n~ <intent-filter>~\n~ <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />~\n~ <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />~\n~ <action android:name="android.intent.action.BATTERY_CHANGED" />~\n~ <action android:name="android.intent.action.SCREEN_OFF" />~\n~ <action android:name="android.intent.action.SCREEN_ON" />~\n~ </intent-filter>~\n~ </receiver>)~\n~ ~\n~ ~\n~ ~\n~             ~\n~AddManifestText(~\n~<permission~\n~        android:name="ir.safhebeshkan.apkkala.permission.C2D_MESSAGE"~\n~        android:protectionLevel="signature" />~\n~<uses-permission android:name="ir.safhebeshkan.apkkala.permission.C2D_MESSAGE" />~\n~~\n~~\n~<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>~\n~<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>~\n~)~\n~~\n~'optional permissions~\n~AddManifestText(~\n~<uses-permission android:name="android.permission.READ_PHONE_STATE"/>~\n~<uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>~\n~)~\n~AddApplicationText(~\n~<receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >~\n~<intent-filter>~\n~    <action android:name="android.intent.action.PACKAGE_REPLACED" />~\n~~\n~    <data~\n~            android:path="ir.safhebeshkan.apkkala"~\n~            android:scheme="package" />~\n~</intent-filter>~\n~</receiver>~\n~<receiver~\n~android:name="co.ronash.pushe.receiver.PusheGcmReceiver"~\n~android:exported="true"~\n~android:permission="com.google.android.c2dm.permission.SEND" >~\n~<intent-filter>~\n~    <action android:name="com.google.android.c2dm.intent.RECEIVE" />~\n~~\n~    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />~\n~~\n~    <category android:name="ir.safhebeshkan.apkkala" />~\n~</intent-filter>~\n~</receiver>~\n~<service~\n~android:name="co.ronash.pushe.service.GcmService"~\n~android:exported="false" android:priority="999">~\n~<intent-filter>~\n~    <action android:name="com.google.android.c2dm.intent.RECEIVE" />~\n~</intent-filter>~\n~</service>~\n~~\n~<receiver~\n~android:name="co.ronash.pushe.receiver.FallbackGcmNetworkManagerReceiver"~\n~android:exported="true" >~\n~<intent-filter>~\n~    <action android:name="co.ronash.pushe.CHECK_TASKS" />~\n~</intent-filter>~\n~</receiver>~\n~~\n~<service~\n~android:name="co.ronash.pushe.service.FallbackGcmTaskRunner"~\n~android:exported="false" >~\n~<intent-filter>~\n~    <action android:name="co.ronash.pushe.ACTION_TASK_READY" />~\n~</intent-filter>~\n~</service>~\n~<service~\n~android:name="co.ronash.pushe.task.scheduler.gcm.GcmTaskRunner"~\n~android:exported="true"~\n~android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" >~\n~<intent-filter>~\n~    <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />~\n~</intent-filter>~\n~</service>~\n~<service~\n~android:name="co.ronash.pushe.service.IntentTaskRunner"~\n~android:exported="false" />~\n~<service~\n~android:name="co.ronash.pushe.service.InstanceIDService"~\n~android:exported="false" >~\n~<intent-filter>~\n~    <action android:name="com.google.android.gms.iid.InstanceID" />~\n~</intent-filter>~\n~</service>~\n~<activity~\n~android:name="co.ronash.pushe.activities.PopupDialogActivity"~\n~android:theme="@style/PusheTransparent">~\n~</activity>~\n~~\n~<receiver android:name="co.ronash.pushe.receiver.BootAndScreenReceiver">~\n~<intent-filter>~\n~    <action android:name="android.intent.action.BOOT_COMPLETED"/>~\n~</intent-filter>~\n~</receiver>~\n~<service android:name="co.ronash.pushe.service.ScreenStateService">~\n~<intent-filter>~\n~    <action android:name="co.ronash.pushe.service.ScreenStateService" />~\n~</intent-filter>~\n~</service>~\n~~\n~<activity~\n~android:name="co.ronash.pushe.activities.WebviewActivity">~\n~</activity>~\n~~\n~<receiver android:name="co.ronash.pushe.receiver.ConnectivityReceiver">~\n~<intent-filter>~\n~    <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>~\n~</intent-filter>~\n~</receiver>~\n~~\n~<receiver~\n~android:name="co.ronash.pushe.receiver.AddReceiver"~\n~android:exported="false">~\n~<intent-filter>~\n~    <action android:name="com.evernote.android.job.ADD_JOB_CREATOR"/>~\n~</intent-filter>~\n~</receiver>~\n~~\n~<receiver android:name="co.ronash.pushe.receiver.AppChangeReceiver">~\n~<intent-filter>~\n~    <action android:name="android.intent.action.PACKAGE_INSTALL" />~\n~    <action android:name="android.intent.action.PACKAGE_ADDED" />~\n~    <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED" />~\n~    <data android:scheme="package"/>~\n~</intent-filter>~\n~</receiver>~\n~~\n~<service~\n~android:name="com.evernote.android.job.v21.PlatformJobService"~\n~android:exported="false"~\n~android:permission="android.permission.BIND_JOB_SERVICE" />~\n~<service~\n~android:name="com.evernote.android.job.v14.PlatformAlarmService"~\n~android:exported="false" />~\n~~\n~<receiver~\n~android:name="com.evernote.android.job.v14.PlatformAlarmReceiver"~\n~android:exported="false" >~\n~<intent-filter>~\n~    <action android:name="com.evernote.android.job.v14.RUN_JOB" />~\n~    <action android:name="net.vrallev.android.job.v14.RUN_JOB" />~\n~</intent-filter>~\n~</receiver>~\n~<receiver~\n~android:name="com.evernote.android.job.JobBootReceiver"~\n~android:exported="false" >~\n~<intent-filter>~\n~    <action android:name="android.intent.action.BOOT_COMPLETED" />~\n~</intent-filter>~\n~</receiver>~\n~<service~\n~android:name="com.evernote.android.job.gcm.PlatformGcmService"~\n~android:exported="true"~\n~android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">~\n~<intent-filter>~\n~    <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>~\n~</intent-filter>~\n~</service>~\n~~\n~<activity~\n~android:name="co.ronash.pushe.activities.RequestAccessDialogActivity"~\n~android:theme="@style/PusheTransparent" >~\n~</activity>~\n~~\n~<service android:name="co.ronash.pushe.service.PusheActivityService"/>~\n~~\n~<provider~\n~    android:name="co.ronash.pushe.provider.PusheProvider"~\n~    android:authorities="ir.safhebeshkan.apkkala.co.ronash.pushe.pusheprovider"~\n~    android:exported="false"~\n~    android:enabled="true"~\n~    android:grantUriPermissions="true">~\n~<meta-data~\n~    android:name="android.support.FILE_PROVIDER_PATHS"~\n~    android:resource="@xml/provider_paths" />~\n~</provider>~\n~~\n~    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>~\n~    <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_623232747175"/>~\n~    <meta-data android:name="co.ronash.pushe.cr" android:value="aHR0cDovLzYzNDdhNTc1ODQ2NzRmMTI5MjdjMWNhODBhNjk4YWE4OmRjYzU2NzFmZGQ5YzRiMmVhOWM2ZjJiYmIwOGY1YTBiQGNhLnB1c2hlLmlyLzE4NjU0"/>~\n~)~\n~~\n~        ~\n~ ~\n~ ~\n~ ~\n~~\n~'End of default text.~\n~
+Module1=actAbout
+Module2=actIcon
+Module3=actVis
+Module4=mycode
+Module5=service1
+Module6=Starter
+NumberOfFiles=42
+NumberOfLibraries=11
+NumberOfModules=6
+Version=7.8
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: صفحه گوشیتو بشکن
+	#VersionCode: 1
+	#VersionName: 100.101.1
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+	#AdditionalJar : Cheshmak.aar
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	
+Dim tmr1 As Timer
+End Sub
+
+Sub Globals
+Private pnl1 As Panel
+Dim bnlset As Boolean
+Dim imgTemp As ImageView
+Private imgsetting As ImageView
+Private imgabout As ImageView
+Private imgexit As ImageView
+Private imgstart As ImageView
+Private lbltitle As Label
+Private Label1 As EditText
+	Dim Pushe As Pushe
+	
+	Private Button1 As Button
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+
+Activity.LoadLayout("1")
+
+	Pushe.initialize()
+
+pnl1.Color = Colors.RGB(229,226,226)
+lbltitle.Typeface = Typeface.LoadFromAssets("SROYA.TTF")
+Label1.Typeface = Typeface.LoadFromAssets("SROYA.TTF")
+Label1.Color = Colors.Transparent
+tmr1.Initialize("tmr1",100)
+
+If mycode.pre.GetBoolean("first") = False Then
+ mycode.pre.SetBoolean("first",True)
+ mycode.pre.SetBoolean("play",True)
+ mycode.pre.SetBoolean("lock",True)
+ mycode.pre.SetBoolean("vibrate",True)
+ mycode.pre.SetString("op","128")
+End If
+ Dim verticalPosition As String = "bottom" '"top" or "bottom"
+    Dim horizontalPosition As String = "center" '"left", "right" or "center"
+    Dim r As Reflector 
+    Dim args(3) As Object = Array As Object(r.GetActivity, verticalPosition, horizontalPosition)
+    Dim types(3) As String = Array As String("android.app.Activity", "java.lang.String", "java.lang.String")    
+   
+End Sub
+
+Sub Activity_Resume
+StopService(service1)
+CancelScheduledService(service1)
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub settings
+Dim cat1 As AHPreferenceCategory
+Dim intentScreen As AHPreferenceScreen
+intentScreen.Initialize("تنظیمات","تنظیمات برنامه")
+cat1.Initialize("صفحه گوشیتو بشکن خخخ")
+cat1.AddCheckBox("play", "قطع شدن صدا حین شکستن صفحه گوشی","قطع است", "با صدا است", False ,"")
+cat1.AddEditText("op","شفافیت تصویر","با نمایش تصویر،شفافیت آن را میتوانید کم یا زیاد کنید که بین 1 تا 255 میباشد","128","")
+cat1.AddCheckBox("vibrate","ویبره خوردن گوشی حین شکسته شدن صفحه","فعال","غیرفعال",False,"")
+cat1.AddCheckBox("lock","قفل شدن دکمه برگشت گوشی حین شکستن صفحه","فعال","غیرفعال",False,"")
+intentScreen.AddPreferenceCategory(cat1)
+StartActivity(intentScreen.CreateIntent)
+End Sub
+
+Sub imgexit_Click
+mycode.playAudio("b.mp3")
+imgTemp = imgexit
+tmr1.Enabled = True
+End Sub
+
+Sub imgabout_Click
+mycode.playAudio("b.mp3")
+imgTemp = imgabout
+tmr1.Enabled = True
+End Sub
+
+Sub imgsetting_Click
+mycode.playAudio("b.mp3")
+imgTemp = imgsetting
+tmr1.Enabled = True
+End Sub
+
+Sub imgstart_Click
+mycode.playAudio("b.mp3")
+imgTemp = imgstart
+tmr1.Enabled = True
+End Sub
+
+Sub tmr1_Tick
+If bnlset = False Then
+ imgTemp.Top = imgTemp.Top + 15dip	
+ bnlset = True
+Else
+ imgTemp.Top = imgTemp.Top - 15dip	
+ bnlset = False
+ tmr1.Enabled = False
+ If imgTemp.Tag = "about" Then
+  StartActivity(actIcon)
+ Else If imgTemp.Tag = "exit" Then
+  exitApp
+ Else If imgTemp.Tag = "setting" Then
+  selectaudio
+ Else If imgTemp.Tag = "start" Then
+  showBreak
+ End If
+End If
+End Sub
+
+Sub selectaudio
+Dim id As id
+Dim i As Int
+i = id.InputList1(Array As String("صدای شماره 1","صدای شماره 2","صدای شماره 3","صدای شماره 4","صدای شماره 5","صدای شماره 6"),"انتخاب صدای شکسته شدن صفحه")
+ If i <> -3 Then
+  mycode.pre.SetString("audio",i & ".wav")
+  ToastMessageShow("صدای مورد تغییر کرد",False)
+ End If
+End Sub
+
+Sub exitApp
+Dim i As Int
+i = Msgbox2("آیا مایل به خروج از برنامه هستید؟","خروج","بله","خیر","",Null)
+If i = DialogResponse.POSITIVE Then
+ StopService(service1)
+ CancelScheduledService(service1)
+ Activity.Finish
+End If
+End Sub
+
+Sub showBreak
+Dim in1 As InputDialog
+in1.InputType = in1.INPUT_TYPE_NUMBERS
+If in1.Show("لطفا زمان را به ثانیه برای فعال شدن وارد کنید","توجه","شروع کن","انصراف","",Null) = DialogResponse.POSITIVE Then
+ If IsNumber(in1.Input) Then
+  StartServiceAt(service1,DateTime.Now + in1.Input * 1000,False)
+  ToastMessageShow("برنامه فعال شد",False)
+  Activity.Finish
+ End If
+End If
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean 'Return True to consume the event
+ If KeyCode = KeyCodes.KEYCODE_BACK Then
+  exitApp
+  Return True
+ End If
+End Sub
+
+Sub btnsetting_Click
+settings
+End Sub
+
+
+
+Sub Button1_Click
+	
+	
+	Private i As Intent
+	i.Initialize(i.ACTION_VIEW,"https://cafebazaar.ir/developer/402714907687/?l=fa")
+	StartActivity(i)
+	
+End Sub

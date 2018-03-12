@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="ir.safhebeshkan.apkkala"
+	android:versionCode="1"
+	android:versionName="100.101.1"
+	android:installLocation="internalOnly">
+	
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="22"/>
+	<supports-screens android:largeScreens="true" 
+	    android:normalScreens="true" 
+	    android:smallScreens="true" 
+	    android:anyDensity="true"/>
+	<permission android:name="ir.safhebeshkan.apkkala.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<permission
+	        android:name="ir.safhebeshkan.apkkala.permission.C2D_MESSAGE"
+	        android:protectionLevel="signature" />
+	<uses-permission android:name="ir.safhebeshkan.apkkala.permission.C2D_MESSAGE" />
+	
+	
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="ir.safhebeshkan.apkkala.permission.C2D_MESSAGE"/>
+	<application
+		android:icon="@drawable/icon"
+		android:label="صفحه گوشیتو بشکن">
+		
+		<activity android:label="Setting" android:name="anywheresoftware.b4a.objects.preferenceactivity"/>
+		<meta-data
+		 android:name="com.google.android.gms.version"
+		 android:value="@integer/google_play_services_version" />
+		 <service android:name="me.cheshmak.android.sdk.core.push.CheshmakPushRegistration"
+		 android:exported="false" />
+		 <service
+		 android:name="me.cheshmak.android.sdk.core.push.CheshIDListenerService"
+		 android:exported="false" >
+		 <intent-filter>
+		 <action android:name="com.google.android.gms.iid.InstanceID" />
+		 </intent-filter>
+		 </service>
+		 <service android:name="me.cheshmak.android.sdk.core.push.CheshGcmListenerService" />
+		
+		 <receiver
+		 android:name="com.google.android.gms.gcm.GcmReceiver"
+		 android:exported="true"
+		 android:permission="com.google.android.c2dm.permission.SEND" >
+		 <intent-filter>
+		 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		 <category android:name="me.cheshmak.android.sdk.core" />
+		 </intent-filter>
+		 </receiver>
+		 <receiver android:name="me.cheshmak.android.sdk.core.recievers.AlarmReceiver" >
+		 <intent-filter>
+		 <action android:name="android.intent.action.TIME_SET" />
+		 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+		 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+		 <action android:name="android.intent.action.DELETE" />
+		 </intent-filter>
+		 <intent-filter>
+		 <action android:name="android.intent.action.BOOT_COMPLETED" />
+		 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+		 </intent-filter>
+		 </receiver>
+		 <receiver android:name="me.cheshmak.android.sdk.core.recievers.RemoteReceiver" >
+		 <intent-filter>
+		 <action android:name="CHESH_REMOTE_DATA_ACTION" />
+		 </intent-filter>
+		 </receiver>
+		 <receiver android:name="me.cheshmak.android.sdk.core.recievers.LocationReceiver" />
+		 <receiver
+		 android:name="me.cheshmak.android.sdk.core.push.GcmBroadcastReceiver"
+		 android:permission="com.google.android.c2dm.permission.SEND" >
+		 <intent-filter>
+		 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		 <category android:name="ir.safhebeshkan.apkkala" />
+		 </intent-filter>
+		 </receiver>
+		 <service
+		 android:name="me.cheshmak.android.sdk.core.network.EventSendService"
+		 android:enabled="true" >
+		 </service>
+		 <receiver android:name="me.cheshmak.android.sdk.core.push.MessageHandler" />
+		 <receiver android:name="me.cheshmak.android.sdk.core.recievers.AppChangeListener" >
+		 <intent-filter android:priority="10000" >
+		 <action android:name="android.intent.action.PACKAGE_INSTALL" />
+		 <action android:name="android.intent.action.PACKAGE_ADDED" />
+		 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+		 <action android:name="android.intent.action.PACKAGE_REPLACED" />
+		
+		 <data android:scheme="package" />
+		 </intent-filter>
+		 </receiver>
+		
+		 <service
+		 android:name="me.cheshmak.android.sdk.core.push.mqtt.CheshmakSocketService"
+		 android:enabled="true" />
+		
+		 <receiver android:name="me.cheshmak.android.sdk.core.recievers.PowerConnectionReceiver" >
+		 <intent-filter>
+		 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+		 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+		 <action android:name="android.intent.action.BATTERY_CHANGED" />
+		 <action android:name="android.intent.action.SCREEN_OFF" />
+		 <action android:name="android.intent.action.SCREEN_ON" />
+		 </intent-filter>
+		 </receiver>
+		<receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >
+		<intent-filter>
+		    <action android:name="android.intent.action.PACKAGE_REPLACED" />
+		
+		    <data
+		            android:path="ir.safhebeshkan.apkkala"
+		            android:scheme="package" />
+		</intent-filter>
+		</receiver>
+		<receiver
+		android:name="co.ronash.pushe.receiver.PusheGcmReceiver"
+		android:exported="true"
+		android:permission="com.google.android.c2dm.permission.SEND" >
+		<intent-filter>
+		    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		
+		    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		
+		    <category android:name="ir.safhebeshkan.apkkala" />
+		</intent-filter>
+		</receiver>
+		<service
+		android:name="co.ronash.pushe.service.GcmService"
+		android:exported="false" android:priority="999">
+		<intent-filter>
+		    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		</intent-filter>
+		</service>
+		
+		<receiver
+		android:name="co.ronash.pushe.receiver.FallbackGcmNetworkManagerReceiver"
+		android:exported="true" >
+		<intent-filter>
+		    <action android:name="co.ronash.pushe.CHECK_TASKS" />
+		</intent-filter>
+		</receiver>
+		
+		<service
+		android:name="co.ronash.pushe.service.FallbackGcmTaskRunner"
+		android:exported="false" >
+		<intent-filter>
+		    <action android:name="co.ronash.pushe.ACTION_TASK_READY" />
+		</intent-filter>
+		</service>
+		<service
+		android:name="co.ronash.pushe.task.scheduler.gcm.GcmTaskRunner"
+		android:exported="true"
+		android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" >
+		<intent-filter>
+		    <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+		</intent-filter>
+		</service>
+		<service
+		android:name="co.ronash.pushe.service.IntentTaskRunner"
+		android:exported="false" />
+		<service
+		android:name="co.ronash.pushe.service.InstanceIDService"
+		android:exported="false" >
+		<intent-filter>
+		    <action android:name="com.google.android.gms.iid.InstanceID" />
+		</intent-filter>
+		</service>
+		<activity
+		android:name="co.ronash.pushe.activities.PopupDialogActivity"
+		android:theme="@style/PusheTransparent">
+		</activity>
+		
+		<receiver android:name="co.ronash.pushe.receiver.BootAndScreenReceiver">
+		<intent-filter>
+		    <action android:name="android.intent.action.BOOT_COMPLETED"/>
+		</intent-filter>
+		</receiver>
+		<service android:name="co.ronash.pushe.service.ScreenStateService">
+		<intent-filter>
+		    <action android:name="co.ronash.pushe.service.ScreenStateService" />
+		</intent-filter>
+		</service>
+		
+		<activity
+		android:name="co.ronash.pushe.activities.WebviewActivity">
+		</activity>
+		
+		<receiver android:name="co.ronash.pushe.receiver.ConnectivityReceiver">
+		<intent-filter>
+		    <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+		</intent-filter>
+		</receiver>
+		
+		<receiver
+		android:name="co.ronash.pushe.receiver.AddReceiver"
+		android:exported="false">
+		<intent-filter>
+		    <action android:name="com.evernote.android.job.ADD_JOB_CREATOR"/>
+		</intent-filter>
+		</receiver>
+		
+		<receiver android:name="co.ronash.pushe.receiver.AppChangeReceiver">
+		<intent-filter>
+		    <action android:name="android.intent.action.PACKAGE_INSTALL" />
+		    <action android:name="android.intent.action.PACKAGE_ADDED" />
+		    <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED" />
+		    <data android:scheme="package"/>
+		</intent-filter>
+		</receiver>
+		
+		<service
+		android:name="com.evernote.android.job.v21.PlatformJobService"
+		android:exported="false"
+		android:permission="android.permission.BIND_JOB_SERVICE" />
+		<service
+		android:name="com.evernote.android.job.v14.PlatformAlarmService"
+		android:exported="false" />
+		
+		<receiver
+		android:name="com.evernote.android.job.v14.PlatformAlarmReceiver"
+		android:exported="false" >
+		<intent-filter>
+		    <action android:name="com.evernote.android.job.v14.RUN_JOB" />
+		    <action android:name="net.vrallev.android.job.v14.RUN_JOB" />
+		</intent-filter>
+		</receiver>
+		<receiver
+		android:name="com.evernote.android.job.JobBootReceiver"
+		android:exported="false" >
+		<intent-filter>
+		    <action android:name="android.intent.action.BOOT_COMPLETED" />
+		</intent-filter>
+		</receiver>
+		<service
+		android:name="com.evernote.android.job.gcm.PlatformGcmService"
+		android:exported="true"
+		android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+		<intent-filter>
+		    <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+		</intent-filter>
+		</service>
+		
+		<activity
+		android:name="co.ronash.pushe.activities.RequestAccessDialogActivity"
+		android:theme="@style/PusheTransparent" >
+		</activity>
+		
+		<service android:name="co.ronash.pushe.service.PusheActivityService"/>
+		
+		<provider
+		    android:name="co.ronash.pushe.provider.PusheProvider"
+		    android:authorities="ir.safhebeshkan.apkkala.co.ronash.pushe.pusheprovider"
+		    android:exported="false"
+		    android:enabled="true"
+		    android:grantUriPermissions="true">
+		<meta-data
+		    android:name="android.support.FILE_PROVIDER_PATHS"
+		    android:resource="@xml/provider_paths" />
+		</provider>
+		
+		    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+		    <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_623232747175"/>
+		    <meta-data android:name="co.ronash.pushe.cr" android:value="aHR0cDovLzYzNDdhNTc1ODQ2NzRmMTI5MjdjMWNhODBhNjk4YWE4OmRjYzU2NzFmZGQ5YzRiMmVhOWM2ZjJiYmIwOGY1YTBiQGNhLnB1c2hlLmlyLzE4NjU0"/>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".main"
+			android:label="صفحه گوشیتو بشکن"
+			android:screenOrientation="portrait">
+			<intent-filter>
+			   <action android:name="android.intent.action.MAIN" />
+			   <category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actabout"
+			android:label="صفحه گوشیتو بشکن"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".acticon"
+			android:label="صفحه گوشیتو بشکن"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".actvis"
+			android:label="صفحه گوشیتو بشکن"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar">
+		</activity>
+		<service android:name=".service1">
+		</service>
+		<receiver android:name=".service1$service1_BR">
+		</receiver>
+		<service android:name=".starter">
+		</service>
+		<receiver android:name=".starter$starter_BR">
+		</receiver>
+	</application>
+</manifest>
